@@ -1,12 +1,6 @@
-"""Provides an arithmetic addition function"""
-class Calculation:
-    def __init__(self,a,b,operation):
-        self.a = a
-        self.b = b
-        self.operation = operation # Store the operation function here
+from calculator.calculation import Calculation
+from calculator.operations import add, subtract, multiply, divide
 
-        def get_result(self):
-            # Call the stored operation with a and b
 class Calculator:
     @staticmethod
     def add(a,b):
@@ -15,8 +9,10 @@ class Calculator:
     @staticmethod
     def subtract(a,b):
         calculation = Calculation(a,b,subtract) #Pass the subtract function
-    """subtracts two numbers"""
-    return a - b
-def divide(a,b):
-    """divides two numbers"""
-    return a / b
+        return Calculation.get_result()
+    def multiply (a,b):
+        calculation = Calculation(a,b,multiply) #pass the multiply function
+        return Calculation.get_result()
+    def divide(a,b):
+        calculation = Calculation(a,b,divide)
+        return calculation.get_result()
