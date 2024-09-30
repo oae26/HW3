@@ -4,14 +4,14 @@ from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
 
 @pytest.mark.parametrize("a, b, operation, expected", [
-    (Decimal('10'), Decimal('5'), add, Decimal('15')),  # Tests addition
-    (Decimal('10'), Decimal('5'), subtract, Decimal('5')),  # Tests subtraction
-    (Decimal('10'), Decimal('5'), multiply, Decimal('50')),  # Tests multiplication
-    (Decimal('10'), Decimal('2'), divide, Decimal('5')),  # Tests division 
-    (Decimal('10.5'), Decimal('0.5'), add, Decimal('11.0')),  # Tests addition with decimals numbers
-    (Decimal('10.5'), Decimal('0.5'), subtract, Decimal('10.0')),  # Tests subtraction with decimal numbers
-    (Decimal('10.5'), Decimal('2'), multiply, Decimal('21.0')),  # Tests multiplication with decimals numbers
-    (Decimal('10'), Decimal('0.5'), divide, Decimal('20')),  # Tests division with decimals numbers
+    (Decimal('11'), Decimal('5'), add, Decimal('16')),  # Tests addition
+    (Decimal('17'), Decimal('10'), subtract, Decimal('7')),  # Tests subtraction
+    (Decimal('6'), Decimal('6'), multiply, Decimal('36')),  # Tests multiplication
+    (Decimal('65'), Decimal('5'), divide, Decimal('13')),  # Tests division 
+    (Decimal('11.5'), Decimal('11.5'), add, Decimal('23.0')),  # Tests addition with decimals numbers
+    (Decimal('10.5'), Decimal('1.5'), subtract, Decimal('9')),  # Tests subtraction with decimal numbers
+    (Decimal('25.5'), Decimal('2'), multiply, Decimal('51.0')),  # Tests multiplication with decimals numbers
+    (Decimal('30'), Decimal('0.5'), divide, Decimal('60')),  # Tests division with decimals numbers
 ])
 def test_calculation_operations(a, b, operation, expected):
     """
