@@ -1,15 +1,18 @@
-"""
-Provides some arithmetic Functions
-"""
-from calculator import add
-from calculator import subtract
-from calculator import divide
+'''Testing the Calculation function'''
+from calculator import Calculator
+
 def test_addition():
-    """Tests addition"""
-    assert add(2,2)
+    '''Test that addition function works '''    
+    assert Calculator.add(2,7) == 9
+
 def test_subtraction():
-    """Tests the subtraction of two numbers"""
-    assert subtract(2,2) == 0
-def test_division():
-    """Tests the division of two numbers"""
-    assert divide(2,2)
+    '''Test that addition function works '''    
+    assert Calculator.subtract(3,2) == 1
+
+def test_divide():
+    '''Test that division function works '''    
+    assert Calculator.divide(10,2) == 5
+
+def test_multiply():
+    '''Test that multiply function works '''    
+    assert Calculator.multiply(2,6) == 12
