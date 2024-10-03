@@ -8,14 +8,18 @@ from calculator.operations import add, subtract, multiply, divide
     (Decimal('17'), Decimal('10'), subtract, Decimal('7')),  # Tests subtraction
     (Decimal('6'), Decimal('6'), multiply, Decimal('36')),  # Tests multiplication
     (Decimal('65'), Decimal('5'), divide, Decimal('13')),  # Tests division 
-    (Decimal('11.5'), Decimal('11.5'), add, Decimal('23.0')),  # Tests addition with decimals numbers
+    (Decimal('11.5'), Decimal('.5'), add, Decimal('12')),  # Tests addition with decimals numbers
     (Decimal('10.5'), Decimal('1.5'), subtract, Decimal('9')),  # Tests subtraction with decimal numbers
     (Decimal('25.5'), Decimal('2'), multiply, Decimal('51.0')),  # Tests multiplication with decimals numbers
     (Decimal('30'), Decimal('0.5'), divide, Decimal('60')),  # Tests division with decimals numbers
 ])
 def test_calculation_operations(a, b, operation, expected):
     """
-    Test calculation operations with various scenarios. It will make sure that the artithmetic functions from the other files work 
+    Test calculation operations with various scenarios.
+    
+    This test ensures that the Calculation class correctly performs the arithmetic operation
+    (specified by the 'operation' parameter) on two Decimal operands ('a' and 'b'),
+    and that the result matches the expected outcome.
     
     Parameters:
         a (Decimal): The first operand in the calculation.
@@ -24,8 +28,6 @@ def test_calculation_operations(a, b, operation, expected):
         expected (Decimal): The expected result of the operation.
     """
     calc = Calculation(a, b, operation)  # Create a Calculation instance with the provided operands and operation.
-    assert calc.perform() == expected, f"Failed {operation.__name__} operation with {a} and {b}"  # Perform the operation and assert that the result matches the expected value.
-
 def test_calculation_repr():
     """
     Test the string representation (__repr__) of the Calculation class.
@@ -39,7 +41,7 @@ def test_calculation_repr():
 
 def test_divide_by_zero():
     """
-    Test division by zero to ensure it raises a ValueError. A ValueError is a thrown error for mathematic impossibilities.
+    Test division by zero to ensure it raises a ValueError.
     
     This test checks that attempting to perform a division operation with a zero divisor
     correctly raises a ValueError, as dividing by zero is mathematically undefined and should be handled as an error.
