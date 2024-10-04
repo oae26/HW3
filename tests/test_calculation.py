@@ -3,16 +3,7 @@ import pytest
 from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
 
-@pytest.mark.parametrize("a, b, operation, expected", [
-    (Decimal('11'), Decimal('5'), add, Decimal('16')),  # Tests addition
-    (Decimal('17'), Decimal('10'), subtract, Decimal('7')),  # Tests subtraction
-    (Decimal('6'), Decimal('6'), multiply, Decimal('36')),  # Tests multiplication
-    (Decimal('65'), Decimal('5'), divide, Decimal('13')),  # Tests division 
-    (Decimal('11.5'), Decimal('.5'), add, Decimal('12')),  # Tests addition with decimals numbers
-    (Decimal('10.5'), Decimal('1.5'), subtract, Decimal('9')),  # Tests subtraction with decimal numbers
-    (Decimal('25.5'), Decimal('2'), multiply, Decimal('51.0')),  # Tests multiplication with decimals numbers
-    (Decimal('30'), Decimal('0.5'), divide, Decimal('60')),  # Tests division with decimals numbers
-])
+
 def test_calculation_operations(a, b, operation, expected):
     """
     Test calculation operations with various scenarios.
